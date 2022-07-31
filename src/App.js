@@ -1,18 +1,16 @@
 import './App.css';
 
-import Technologies from './Technologies';
-import Raiting from "./Raiting"
-import { Accordion } from './Accordion';
+import { Navbar } from './components/Navbar';
+import { Profile } from './components/Profile';
+import { Header } from './components/Header';
 
 
 const App = () => {
   return (
     <div className='app-wrapper'>
-      <PageTitle title="First Title" />
-      <Accordion title="Menu" collapsed={true}/>
-      <Raiting value={4}/>
-      <Accordion title="Log" collapsed={false}/>
-      <Raiting value={5}/>
+      <Header/>
+      <Navbar/>
+      <Profile/>
     </div>
   );
 }
