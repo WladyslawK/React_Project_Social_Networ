@@ -1,0 +1,15 @@
+.content{
+    grid-area: c;
+    background-color: yellow;
+  
+    grid-template-areas: 
+    "i";
+  
+    grid-template-rows: 100px 3fr 2fr 5fr;
+    grid-template-columns: 1fr;
+  }
+  .img{
+    margin: 1%;
+    width: 98%;
+    height: 40%;
+  }
