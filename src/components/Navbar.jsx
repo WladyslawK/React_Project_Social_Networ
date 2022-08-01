@@ -3,6 +3,7 @@ import s from "./Navbar.module.css"
 
 export const Navbar = () => {
     return (
+
     <nav className={s.nav}>
       <div className={s.item}>
         <a>Profile</a>
@@ -20,6 +21,7 @@ export const Navbar = () => {
         <a>Settings</a>
       </div>
     </nav>
+    
   );
 }
 
