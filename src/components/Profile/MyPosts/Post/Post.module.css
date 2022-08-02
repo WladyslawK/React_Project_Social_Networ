@@ -1,0 +1,11 @@
+.item{
+  margin-top : 10px;
+  color: green;
+  font-weight: bold;
+  width: 100%;
+}
+.item img{
+  float: left;
+  width: 60px;
+  border-radius: 50%;
+}
