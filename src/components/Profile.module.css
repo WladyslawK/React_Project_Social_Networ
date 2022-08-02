@@ -1,0 +1,10 @@
+.content{
+    grid-area: c;
+    background-color: yellow;
+  
+  }
+.img{
+    margin: 1%;
+    width: 98%;
+    height: 40%;
+  }
