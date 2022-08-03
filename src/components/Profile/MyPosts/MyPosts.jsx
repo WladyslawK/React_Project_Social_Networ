@@ -13,12 +13,10 @@ export const MyPosts = () => {
           <button>Add Post</button>
         </div>
         <div className={s.posts}>
-          <Post text="Post 1"/>
-          <Post text="Post 2"/>
-          <Post text="Post 3"/>
-          <Post text="Post 4"/>
-          <Post text="Post 5"/>
-          <Post text="Post 6"/>
+          <Post text="Post 1" likes={3}/>
+          <Post text="Post 2" likes={10}/>
+          <Post text="Post 3" likes={15}/>
+          <Post text="Post 4" likes={22}/>
         </div>  
       </div>
     </>
