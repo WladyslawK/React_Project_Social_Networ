@@ -6,7 +6,11 @@
   color: white;
   padding-left: 5px;
 }
-.item a.active{
-  color: aqua;
+.item a{
+  text-decoration: none;
+  color: black;
+}
+a.active{
+  color: darkgreen;
   font-weight: bold;
 }
