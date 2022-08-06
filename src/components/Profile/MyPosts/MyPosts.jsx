@@ -2,14 +2,9 @@ import React from "react";
 import s from "./MyPosts.module.css"
 import { Post } from './Post/Post';
 
-export const MyPosts = () => {
-    let postsData = [
-        {id: 1, text: "Post 1", likes: 10 },
-        {id: 2, text: "Post 2", likes: 15 },
-        {id: 3, text: "Post 3", likes: 35 },
-    ];
+export const MyPosts = (props) => {
 
-    let postElements = postsData.map(p => <Post text={p.text} likes={p.likes}/>)
+    let postElements = props.postsData.map(p => <Post text={p.text} likes={p.likes}/>)
 
     return (
     <>
