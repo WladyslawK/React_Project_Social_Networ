@@ -1,7 +1,7 @@
 import './App.css';
 
 import {Profile} from './components/Profile/Profile';
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import Dialogs from "./components/Dialogs/Dialogs";
 import {Navbar} from "./components/Navbar/Navbar";
 import {Header} from "./components/Header/Header";
@@ -14,10 +14,9 @@ import {Settings} from "./components/Settings/Settings";
 const App = (props) => {
 
     return (
-        <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>
-                <Navbar/>
+                <Navbar state={props.state.sidebar}/>
                 <div className="app-wrapper-content">
                     <Routes>
                         <Route path='/profile' element={<Profile state={props.state.profilePage}/>}/>
@@ -28,7 +27,6 @@ const App = (props) => {
                     </Routes>
                 </div>
             </div>
-        </BrowserRouter>
     );
 }
 export default App;

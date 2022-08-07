@@ -9,8 +9,22 @@
     color: cornflowerblue;
 }
 .messages{
+    position: relative;
     padding: 10px;
 }
 .message{
 
+}
+.dialogImage{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.newMessageArea{
+    position: absolute;
+    top: 210px;
+}
+.sent{
+    margin-top: 7px;
+    margin-left: 15px;
 }
