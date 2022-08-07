@@ -1,3 +1,5 @@
+import {rerenderAlltree} from "../render";
+
 const state = {
     profilePage: {
         postsData: [
@@ -31,5 +33,21 @@ const state = {
                     ]
     },
 }
+
+
+export let addPost = (text) =>{
+    let newPost = {
+        id: 5,
+        text: text,
+        likes: 0,
+    }
+    state.profilePage.postsData.push(newPost)
+    rerenderAlltree(state);
+}
+
+
+
+
+
 
 export default state;

@@ -28,3 +28,8 @@
     margin-top: 7px;
     margin-left: 15px;
 }
+.dialogLinks{
+    text-decoration: none;
+    color: blue;
+    font-size: 14px;
+}

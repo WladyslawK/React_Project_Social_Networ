@@ -11,7 +11,8 @@ export const MyPosts = (props) => {
     let addPost =() => {
         debugger;
         let text = newPostReference.current.value;
-        alert(text);
+        props.addPost(text);
+        newPostReference.current.value = "";
     }
 
     return (
