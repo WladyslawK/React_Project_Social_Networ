@@ -36,50 +36,47 @@ let store = {
         },
     },
 
-    getState(){
-        return this._state;
-    },
-
-    addPost(){
-        let newPost = {
-            id: 5,
-            text: this._state.profilePage.newPostText,
-            likes: 0,
-        }
-        this._state.profilePage.postsData.push(newPost)
-        this._state.profilePage.newPostText="";
-        this._callSubscriber(this._state);
-    },
-
-    updateNewPostText(text){
-        this._state.profilePage.newPostText = text;
-        this._callSubscriber(this._state);
-    },
-
-    updateNewMessageText(text){
-        this._state.messages.newMessageText = text;
-        this._callSubscriber(this._state);
-    },
-
-    sendNewMessage(sender){
-        let newMessage = {
-            id: 3,
-            sender: sender,
-            message: this._state.messages.newMessageText,
-        }
-        this._state.messages.messages.push(newMessage);
-        this._state.messages.newMessageText = "";
-        this._callSubscriber(this._state);
-    },
-
     _callSubscriber() {
         console.log("state was changed");
     },
 
+    getState(){
+        return this._state;
+    },
+
     subscribe(observer){
         this._callSubscriber = observer;
-    }
+    },
 
+    dispatch(action){ //action = {type="ADD-POST"}
+      if(action.type === "ADD-POST"){
+          let newPost = {
+              id: 5,
+              text: this._state.profilePage.newPostText,
+              likes: 0,
+          }
+          this._state.profilePage.postsData.push(newPost);
+          this._state.profilePage.newPostText = "";
+          this._callSubscriber(this._state);
+          console.log(this._state.profilePage.newPostText)
+      }else if(action.type === "UPDATE-NEW-POST-TEXT"){
+          this._state.profilePage.newPostText = action.newText;
+          this._callSubscriber(this._state);
+          console.log("Console.log", this._state.profilePage.newPostText);
+      }else if(action.type === "UPDATE-NEW-MESSAGE-TEXT"){
+          this._state.messages.newMessageText = action.newText;
+          this._callSubscriber(this._state);
+      }else if(action.type === "SEND-NEW-MESSAGE"){
+          let newMessage = {
+              id: 3,
+              sender: action.sender,
+              message: this._state.messages.newMessageText,
+          }
+          this._state.messages.messages.push(newMessage);
+          this._state.messages.newMessageText = "";
+          this._callSubscriber(this._state);
+      }
+    },
 }
 
 

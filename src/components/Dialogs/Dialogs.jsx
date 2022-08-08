@@ -12,12 +12,12 @@ const Dialogs = (props) => {
 
     const sendNewMessage = () => {
         let sender = "me"
-        props.sendNewMessage(sender);
+        props.dispatch({type: "SEND-NEW-MESSAGE", sender: sender});
     }
 
     const updateNewMessageText = () => {
         let text = newMessageReference.current.value;
-        props.updateNewMessageText(text);
+        props.dispatch({type: "UPDATE-NEW-MESSAGE-TEXT", newText: text});
     }
 
     return (
