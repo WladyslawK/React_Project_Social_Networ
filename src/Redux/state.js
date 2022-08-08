@@ -6,7 +6,9 @@ const state = {
             {id: 1, text: "Post 1", likes: 10 },
             {id: 2, text: "Post 2", likes: 15 },
             {id: 3, text: "Post 3", likes: 35 },
-        ],},
+        ],
+        newPostText: "",
+    },
     messages: {
         dialogsData: [
             {id: 1, name: "Dave", url: "https://ocdn.eu/pulscms-transforms/1/UkEk9kuTURBXy83N2I1NjFhMy01N2E2LTQyNDgtYjkwNy0zMWU5Mzg2NDY2NWUuanBlZ5GVAs0DBwDDw4GhMAE",},
@@ -35,13 +37,19 @@ const state = {
 }
 
 
-export let addPost = (text) =>{
+export let addPost = () =>{
     let newPost = {
         id: 5,
-        text: text,
+        text: state.profilePage.newPostText,
         likes: 0,
     }
     state.profilePage.postsData.push(newPost)
+    state.profilePage.newPostText="";
+    rerenderAlltree(state);
+}
+
+export let updateNewPostText = (text) => {
+    state.profilePage.newPostText = text;
     rerenderAlltree(state);
 }
 

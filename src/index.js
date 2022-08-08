@@ -9,8 +9,6 @@ import {rerenderAlltree} from "./render";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-//addPost("Samuraj K");
-
 
 rerenderAlltree(state);
 
