@@ -4,7 +4,7 @@ import {NavLink} from "react-router-dom";
 
 const Message = (props) => {
     return (
-        <div className={s.message}>
+        <div className={props.sender==="me" ? s.myMessage : s.othersMessage}>
             {props.message}
         </div>
     );

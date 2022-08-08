@@ -20,10 +20,11 @@ const state = {
 
         ],
         messages: [
-            {id: 1, message: "Hi Helow"},
-            {id: 2, message: "How is your progress?"},
-            {id: 3, message: "Yo"},
+            {id: 1, sender: "other", message: "Hi Helow"},
+            {id: 2, sender: "other", message: "How is your progress?"},
+            {id: 3, sender: "other", message: "Yo"},
         ],
+        newMessageText:"Hello",
 
     },
     sidebar: {
@@ -54,6 +55,21 @@ export let updateNewPostText = (text) => {
 }
 
 
+export let updateNewMessageText = (text) => {
+    state.messages.newMessageText = text;
+    rerenderAlltree(state);
+}
+
+export let sendNewMessage = (sender) => {
+    let newMessage = {
+        id: 3,
+        sender: sender,
+        message: state.messages.newMessageText,
+    }
+    state.messages.messages.push(newMessage);
+    state.messages.newMessageText = "";
+    rerenderAlltree(state);
+}
 
 
 

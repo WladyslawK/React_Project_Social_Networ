@@ -12,8 +12,11 @@
     position: relative;
     padding: 10px;
 }
-.message{
-
+.myMessage{
+    text-align: right;
+}
+.othersMessage{
+    text-align: left;
 }
 .dialogImage{
     width: 40px;
