@@ -20,19 +20,18 @@ export const MyPosts = (props) => {
     }
 
     return (
-    <>
-    <div className={s.content}>
-        <h3>My Posts</h3>
-        <div>
-          <h4>New Post</h4>
-          <textarea onChange={ChangePostArea} ref={newPostReference} value={props.newPostText}/><br/>
-          <button onClick={addPost}>Add Post</button>
-        </div>
-        <div className={s.posts}>
-            {postElements}
-        </div>  
-      </div>
-    </>
-  );
+        <>
+            <div className={s.content}>
+                <h3>My Posts</h3>
+                <div>
+                    <h4>New Post</h4>
+                    <textarea onChange={ChangePostArea} ref={newPostReference} value={props.newPostText}/><br/>
+                    <button onClick={addPost}>Add Post</button>
+                </div>
+                <div className={s.posts}>
+                    {postElements}
+                </div>
+            </div>
+        </>
+    );
 }
-
